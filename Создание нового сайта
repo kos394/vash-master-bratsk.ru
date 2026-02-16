@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ремонт квартир в Братске | ВАШ МАСТЕР — цены, фото, гарантия</title>
-    <meta name="description" content="Качественный ремонт квартир в Братске. Честные цены, реальные фото, гарантия 3 года. Бесплатный выезд на замер. Рассчитайте стоимость онлайн.">
+    <title>Ремонт квартир в Братске | Чернов Виталий — мастер с опытом</title>
+    <meta name="description" content="Ремонт квартир в Братске от Виталия Чернова (самозанятый). Честные цены, реальные фото, гарантия. Выезд на замер бесплатно.">
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
             line-height: 1.6;
         }
         
-        /* Хедер с индустриальным фоном (Братск — город энергетиков) */
+        /* Хедер */
         .hero {
             background: linear-gradient(135deg, #0b1e33 0%, #1a3b5c 50%, #b86b3c 100%);
             color: white;
@@ -27,18 +27,6 @@
             position: relative;
             overflow: hidden;
             text-align: center;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,100 100,80 100,100 0,100" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-            opacity: 0.3;
         }
         
         .hero-content {
@@ -62,11 +50,15 @@
             margin-top: 10px;
         }
         
-        .hero p {
+        .master-name {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 30px;
+            border-radius: 50px;
             font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.95;
+            margin: 20px 0;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
         }
         
         .city-badge {
@@ -173,7 +165,6 @@
             border-radius: 2px;
         }
         
-        /* Прейскурант */
         .price-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -296,7 +287,20 @@
             margin-bottom: 15px;
         }
         
-        /* Калькулятор стоимости */
+        /* Информация о самозанятости */
+        .self-employed-badge {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 5px solid #4caf50;
+        }
+        
+        /* Калькулятор */
         .calculator {
             background: linear-gradient(135deg, #1e3c5c, #2d4e73);
             color: white;
@@ -338,7 +342,7 @@
             color: #ffb347;
         }
         
-        /* Форма обратной связи */
+        /* Форма */
         .contact-form {
             background: white;
             border-radius: 30px;
@@ -437,12 +441,13 @@
     </style>
 </head>
 <body>
-    <!-- ШАПКА С РАССВЕТОМ -->
+    <!-- ШАПКА -->
     <section class="hero">
         <div class="hero-content">
-            <div class="city-badge">🏭 БРАТСК — город энергетиков</div>
-            <h1>РЕМОНТ КВАРТИР <span>— ВАШ МАСТЕР</span></h1>
-            <p>Братск, Падун, Правобережный, Энергетик, Гидростроитель.<br>Честные цены, реальные фото, гарантия 3 года.</p>
+            <div class="city-badge">🏭 БРАТСК — Центр, Падун, Энергетик</div>
+            <h1>РЕМОНТ КВАРТИР <span>— ЧЕРНОВ ВИТАЛИЙ</span></h1>
+            <div class="master-name">⚒️ Мастер с опытом • Самозанятый</div>
+            <p>Работаю в Братске и районах: Центральный, Падун, Правобережный, Энергетик, Гидростроитель, Бикей, Осиновка.<br>Честные цены, реальные фото, гарантия.</p>
             <a href="#price" class="cta-button">👉 СМОТРЕТЬ ЦЕНЫ</a>
         </div>
     </section>
@@ -450,281 +455,110 @@
     <!-- НАВИГАЦИЯ -->
     <div class="nav-bar">
         <div class="nav-container">
-            <div class="logo">ВАШ МАСТЕР <small>Братск</small></div>
+            <div class="logo">ЧЕРНОВ ВИТАЛИЙ <small>Братск</small></div>
             <div class="nav-links">
                 <a href="#price">Цены</a>
-                <a href="#gallery">Фото работ</a>
-                <a href="#advantages">Почему мы</a>
+                <a href="#gallery">Фото</a>
                 <a href="#contact">Контакты</a>
             </div>
         </div>
     </div>
     
     <div class="container">
-        <!-- ПРЕЙСКУРАНТ ЦЕН (СРЕДНЕРЫНОЧНЫЕ ПО БРАТСКУ) -->
+        <!-- БЛОК О САМОЗАНЯТОСТИ -->
+        <div class="self-employed-badge">
+            <div style="font-size: 2.5rem;">📄</div>
+            <div>
+                <strong>Работаю официально как самозанятый</strong><br>
+                Чернов Виталий Александрович • Чек в приложении «Мой налог» • Оплата на карту/наличные
+            </div>
+        </div>
+        
+        <!-- ПРАЙС -->
         <section id="price">
-            <h2 class="section-title">💰 ПРАЙС-ЛИСТ (Братск, 2026)</h2>
-            <p style="margin-bottom: 30px;">Цены указаны за работу. Материалы оплачиваются отдельно или приобретаются вами.</p>
+            <h2 class="section-title">💰 ПРАЙС-ЛИСТ 2026 (Братск)</h2>
+            <p style="margin-bottom: 30px;">Цены за работу. Материалы обсуждаются отдельно.</p>
             
             <div class="price-grid">
-                <!-- Карточка 1: Стены/Потолок -->
                 <div class="price-card" style="border-left-color: #3498db;">
                     <h3>🧱 СТЕНЫ И ПОТОЛОК</h3>
                     <ul class="price-list">
-                        <li><span>Выравнивание стен (штукатурка)</span> <span class="price">от 600 ₽/м²</span></li>
-                        <li><span>Шпаклевка стен под покраску</span> <span class="price">350 ₽/м²</span></li>
-                        <li><span>Поклейка обоев (бумажные)</span> <span class="price">450 ₽/м²</span></li>
-                        <li><span>Поклейка обоев (флизелин/винил)</span> <span class="price">550 ₽/м²</span></li>
-                        <li><span>Покраска стен (1 слой)</span> <span class="price">180 ₽/м²</span></li>
+                        <li><span>Штукатурка стен</span> <span class="price">от 600 ₽/м²</span></li>
+                        <li><span>Шпаклевка под покраску</span> <span class="price">350 ₽/м²</span></li>
+                        <li><span>Поклейка обоев (флизелин)</span> <span class="price">550 ₽/м²</span></li>
                         <li><span><strong>Установка ПВХ панелей</strong></span> <span class="price"><strong>500 ₽/м²</strong></span></li>
-                        <li><span>Монтаж потолков Армстронг</span> <span class="price">400 ₽/м²</span></li>
                     </ul>
                 </div>
                 
-                <!-- Карточка 2: Полы -->
                 <div class="price-card" style="border-left-color: #2ecc71;">
                     <h3>🪵 ПОЛЫ</h3>
                     <ul class="price-list">
                         <li><span>Стяжка пола (до 5 см)</span> <span class="price">600 ₽/м²</span></li>
                         <li><span>Укладка ламината</span> <span class="price">400 ₽/м²</span></li>
-                        <li><span>Укладка паркетной доски</span> <span class="price">550 ₽/м²</span></li>
-                        <li><span>Укладка керамогранита/плитки</span> <span class="price">1200 ₽/м²</span></li>
                         <li><span><strong>Настил линолеума</strong></span> <span class="price"><strong>250 ₽/м²</strong></span></li>
-                        <li><span>Укладка ковролина</span> <span class="price">200 ₽/м²</span></li>
+                        <li><span>Укладка плитки</span> <span class="price">1200 ₽/м²</span></li>
                     </ul>
                 </div>
                 
-                <!-- Карточка 3: Двери -->
                 <div class="price-card" style="border-left-color: #e67e22;">
                     <h3>🚪 ДВЕРИ</h3>
                     <ul class="price-list">
-                        <li><span><strong>Установка распашной двери (готовый проем)</strong></span> <span class="price"><strong>2200–2800 ₽</strong></span></li>
-                        <li><span>Установка межкомнатной двери (подготовка проема)</span> <span class="price">2500–3500 ₽</span></li>
+                        <li><span><strong>Установка межкомнатной двери</strong></span> <span class="price"><strong>2200–2800 ₽</strong></span></li>
                         <li><span>Установка входной двери</span> <span class="price">3500–4500 ₽</span></li>
-                        <li><span>Установка двери-купе</span> <span class="price">2000–2500 ₽</span></li>
                         <li><span>Монтаж наличников</span> <span class="price">200 ₽/сторона</span></li>
                     </ul>
                 </div>
                 
-                <!-- Карточка 4: Сантехника/Электрика -->
                 <div class="price-card" style="border-left-color: #9b59b6;">
-                    <h3>⚡️ САНТЕХНИКА / ЭЛЕКТРИКА</h3>
+                    <h3>⚡️ САНТЕХНИКА</h3>
                     <ul class="price-list">
                         <li><span>Установка унитаза</span> <span class="price">1800 ₽</span></li>
                         <li><span>Установка раковины</span> <span class="price">1600 ₽</span></li>
                         <li><span>Установка смесителя</span> <span class="price">800 ₽</span></li>
-                        <li><span>Установка ванны (чугун/сталь)</span> <span class="price">2500–3500 ₽</span></li>
-                        <li><span>Точка электрики (штроба/провод)</span> <span class="price">500 ₽</span></li>
-                        <li><span>Установка розетки/выключателя</span> <span class="price">250 ₽</span></li>
+                        <li><span>Точка электрики</span> <span class="price">500 ₽</span></li>
                     </ul>
                 </div>
             </div>
             
-            <!-- Дополнительные расценки -->
-            <div style="background: #f1f5f9; padding: 25px; border-radius: 15px; margin: 30px 0;">
-                <h3 style="color: #1e3c5c; margin-bottom: 15px;">🏗️ ДЕМОНТАЖНЫЕ РАБОТЫ</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                    <div><span>Демонтаж обоев:</span> <strong>80 ₽/м²</strong></div>
-                    <div><span>Демонтаж плитки:</span> <strong>250 ₽/м²</strong></div>
-                    <div><span>Демонтаж линолеума:</span> <strong>50 ₽/м²</strong></div>
-                    <div><span>Вынос мусора:</span> <strong>от 1500 ₽</strong></div>
+            <p class="note">* Выезд на замер — бесплатно. Точная стоимость после осмотра.</p>
+        </section>
+        
+        <!-- КОНТАКТЫ (ТВОИ ДАННЫЕ) -->
+        <section id="contact" style="background: linear-gradient(135deg, #1e3c5c, #2d4e73); border-radius: 30px; padding: 50px; color: white; margin: 50px 0;">
+            <h2 style="color: #ffb347; font-size: 2rem; margin-bottom: 30px;">📞 СВЯЗАТЬСЯ СО МНОЙ</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">📱</div>
+                    <div style="font-size: 1.4rem; font-weight: 700; color: #ffb347;">8-929-439-0444</div>
+                    <div style="margin-top: 5px;">Звоните с 9:00 до 21:00</div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">✉️</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; color: #ffb347; word-break: break-all;">vitaliy-chernov-2012@mail.ru</div>
+                    <div style="margin-top: 5px;">Почта для связи</div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">💬</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; color: #ffb347;">Telegram/WhatsApp</div>
+                    <div style="margin-top: 5px;">+7-929-439-0444</div>
                 </div>
             </div>
             
-            <p class="note">* Цены ориентировочные. Точная стоимость зависит от объема работ и состояния поверхностей. Выезд мастера на замер — <strong>БЕСПЛАТНО</strong> по Братску.</p>
-        </section>
-        
-        <!-- КАЛЬКУЛЯТОР СТОИМОСТИ -->
-        <section class="calculator">
-            <h3 style="text-align: center; font-size: 2rem;">🧮 ПРИМЕРНАЯ СТОИМОСТЬ РЕМОНТА</h3>
-            <p style="text-align: center; margin-bottom: 30px;">Выберите тип ремонта и площадь квартиры</p>
-            
-            <div class="calc-grid">
-                <div class="calc-item">
-                    <div>📏 Площадь квартиры</div>
-                    <select id="roomSize">
-                        <option value="30">до 30 м² (1-комнатная)</option>
-                        <option value="50">30-50 м² (2-комнатная)</option>
-                        <option value="70" selected>50-70 м² (3-комнатная)</option>
-                        <option value="100">70-100 м²</option>
-                    </select>
-                </div>
-                <div class="calc-item">
-                    <div>🛠️ Тип ремонта</div>
-                    <select id="repairType">
-                        <option value="cosmetic" selected>Косметический</option>
-                        <option value="capital">Капитальный</option>
-                        <option value="designer">Дизайнерский/Евро</option>
-                    </select>
-                </div>
-                <div class="calc-item">
-                    <div>🚽 Санузел</div>
-                    <select id="bathroom">
-                        <option value="separate" selected>Раздельный</option>
-                        <option value="combined">Совмещенный</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="calc-total" id="calcTotal">
-                ≈ 350 000 - 450 000 ₽
-            </div>
-            <p style="text-align: center; margin-top: 10px; opacity: 0.8;">Предварительный расчет. Точная смета после замера.</p>
-        </section>
-        
-        <!-- ГАЛЕРЕЯ РАБОТ -->
-        <section id="gallery">
-            <h2 class="section-title">📸 РЕАЛЬНЫЕ ФОТО В БРАТСКЕ</h2>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-image">🏠</div>
-                    <div class="gallery-caption">
-                        <p><strong>ул. Гидростроителей, 45</strong></p>
-                        <p>2-комнатная, косметика</p>
-                        <p class="price-tag">≈ 320 000 ₽</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">🛁</div>
-                    <div class="gallery-caption">
-                        <p><strong>ж/р Энергетик</strong></p>
-                        <p>Ванная, плитка, сантехника</p>
-                        <p class="price-tag">≈ 95 000 ₽</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">🛏️</div>
-                    <div class="gallery-caption">
-                        <p><strong>ул. Комсомольская</strong></p>
-                        <p>Капремонт 3-комнатной</p>
-                        <p class="price-tag">≈ 580 000 ₽</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">🚪</div>
-                    <div class="gallery-caption">
-                        <p><strong>Падун, ул. Набережная</strong></p>
-                        <p>Замена 3 дверей</p>
-                        <p class="price-tag">≈ 22 000 ₽</p>
-                    </div>
-                </div>
-            </div>
-            <p style="text-align: center; margin-top: 20px;">Фото будут загружены позже — сейчас заглушки</p>
-        </section>
-        
-        <!-- ПРЕИМУЩЕСТВА -->
-        <section id="advantages">
-            <h2 class="section-title">🔥 ПОЧЕМУ НАМ ДОВЕРЯЮТ В БРАТСКЕ</h2>
-            <div class="advantages">
-                <div class="advantage-item">
-                    <div class="advantage-icon">⚡</div>
-                    <h3>Честные цены</h3>
-                    <p>Прайс открыт — никаких скрытых платежей</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">📏</div>
-                    <h3>Бесплатный замер</h3>
-                    <p>Выезжаем по всем районам Братска</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">🛡️</div>
-                    <h3>Гарантия 3 года</h3>
-                    <p>На все виды работ</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">📋</div>
-                    <h3>Смета в день заявки</h3>
-                    <p>Точный расчет за 2 часа</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
-        <section id="contact" class="contact-form">
-            <h2 style="color: #1e3c5c; margin-bottom: 30px; text-align: center;">📞 ОСТАВЬТЕ ЗАЯВКУ</h2>
-            <div class="form-grid">
-                <div>
-                    <p style="margin-bottom: 20px;">Приедем, посчитаем, посоветуем. Абсолютно бесплатно.</p>
-                    <p style="font-size: 1.2rem; margin-bottom: 10px;">📱 <strong>+7 (914) 900-55-22</strong></p>
-                    <p style="margin-bottom: 10px;">✉️ remont.bratsk@yandex.ru</p>
-                    <p style="margin-bottom: 10px;">📍 Братск, ж/р Центральный, ул. Ленина, 12</p>
-                    <p style="margin-top: 20px;">✅ Работаем во всех районах: Центральный, Падун, Правобережный, Энергетик, Гидростроитель, Бикей</p>
-                </div>
-                <div>
-                    <div class="form-group">
-                        <label>Ваше имя</label>
-                        <input type="text" class="form-control" placeholder="Виталий">
-                    </div>
-                    <div class="form-group">
-                        <label>Телефон</label>
-                        <input type="tel" class="form-control" placeholder="+7 914 123-45-67">
-                    </div>
-                    <div class="form-group">
-                        <label>Район Братска</label>
-                        <select class="form-control">
-                            <option>Центральный</option>
-                            <option>Падун</option>
-                            <option>Правобережный</option>
-                            <option>Энергетик</option>
-                            <option>Гидростроитель</option>
-                            <option>Бикей</option>
-                            <option>Осиновка</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Тип ремонта</label>
-                        <select class="form-control">
-                            <option>Косметический</option>
-                            <option>Капитальный</option>
-                            <option>Евроремонт</option>
-                            <option>Отдельные работы</option>
-                        </select>
-                    </div>
-                    <button class="submit-btn">👉 Отправить заявку</button>
-                </div>
+            <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 15px;">
+                <p style="font-size: 1.2rem;">⚒️ <strong>Чернов Виталий Александрович</strong> • Самозанятый</p>
+                <p>Работаю по договору, выдаю чеки через приложение «Мой налог»</p>
             </div>
         </section>
     </div>
     
     <!-- ФУТЕР -->
     <footer class="footer">
-        <p>© 2026 <span class="bratsk-highlight">ВАШ МАСТЕР</span> — ремонт квартир в Братске</p>
-        <p>Работаем по договору, с гарантией. ИП Петров А.В., Братск</p>
-        <p style="margin-top: 20px; font-size: 0.9rem;">* Цены указаны как среднерыночные по Иркутской области и могут корректироваться после осмотра объекта</p>
+        <p>© 2026 Чернов Виталий — ремонт квартир в Братске</p>
+        <p>Самозанятый • Работаю официально • Чек по запросу</p>
+        <p>📱 8-929-439-0444 | ✉️ vitaliy-chernov-2012@mail.ru</p>
     </footer>
-
-    <script>
-        // Простой калькулятор для демонстрации
-        document.getElementById('roomSize').addEventListener('change', updateCalc);
-        document.getElementById('repairType').addEventListener('change', updateCalc);
-        document.getElementById('bathroom').addEventListener('change', updateCalc);
-        
-        function updateCalc() {
-            const size = document.getElementById('roomSize').value;
-            const type = document.getElementById('repairType').value;
-            
-            let min = 0, max = 0;
-            
-            if (type === 'cosmetic') {
-                if (size <= 30) { min = 180; max = 250; }
-                else if (size <= 50) { min = 250; max = 350; }
-                else if (size <= 70) { min = 350; max = 450; }
-                else { min = 450; max = 600; }
-            } else if (type === 'capital') {
-                if (size <= 30) { min = 350; max = 450; }
-                else if (size <= 50) { min = 450; max = 600; }
-                else if (size <= 70) { min = 600; max = 800; }
-                else { min = 800; max = 1100; }
-            } else {
-                if (size <= 30) { min = 500; max = 650; }
-                else if (size <= 50) { min = 650; max = 850; }
-                else if (size <= 70) { min = 850; max = 1100; }
-                else { min = 1100; max = 1500; }
-            }
-            
-            document.getElementById('calcTotal').innerHTML = `≈ ${min} 000 - ${max} 000 ₽`;
-        }
-    </script>
 </body>
 </html>
