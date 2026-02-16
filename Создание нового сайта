@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт квартир в Иркутске | ВАШ МАСТЕР — честные цены, реальные работы</title>
+    <meta name="description" content="Ремонт квартир под ключ в Иркутске и области. Прозрачный прайс-лист на 2026 год, фото выполненных работ, гарантия качества. Рассчитайте стоимость онлайн.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        body {
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        /* Хедер с фоном "рассвет" */
+        .hero {
+            background: linear-gradient(135deg, #0b1e33 0%, #1a3b5c 50%, #b86b3c 100%);
+            color: white;
+            padding: 60px 20px 80px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,100 100,80 100,100 0,100" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hero h1 span {
+            color: #ffb347;
+            display: block;
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ffb347;
+            color: #1e293b;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(255, 180, 70, 0.4);
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 180, 70, 0.6);
+            background: #ffa01e;
+        }
+        
+        /* Навигация */
+        .nav-bar {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1e3c5c;
+        }
+        
+        .logo small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #b86b3c;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: #b86b3c;
+        }
+        
+        /* Основной контент */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #1e3c5c;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #ffb347;
+            border-radius: 2px;
+        }
+        
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .price-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border-left: 5px solid;
+            transition: transform 0.3s;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .price-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #1e3c5c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-list {
+            list-style: none;
+        }
+        
+        .price-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .price-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .price-list .price {
+            font-weight: 700;
+            color: #b86b3c;
+        }
+        
+        .note {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        /* Галерея работ (плейсхолдеры для фото) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .gallery-item {
+            background: #e2e8f0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-image {
+            height: 200px;
+            background: linear-gradient(135deg, #94a3b8, #475569);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .gallery-caption {
+            padding: 15px;
+            background: white;
+        }
+        
+        .gallery-caption p {
+            margin: 5px 0;
+        }
+        
+        .gallery-caption .price-tag {
+            color: #b86b3c;
+            font-weight: 700;
+        }
+        
+        /* Преимущества */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .advantage-item {
+            text-align: center;
+            padding: 25px;
+        }
+        
+        .advantage-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Форма обратной связи */
+        .contact-form {
+            background: linear-gradient(135deg, #1e3c5c, #2d4e73);
+            color: white;
+            border-radius: 30px;
+            padding: 50px;
+            margin: 50px 0;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+        }
+        
+        .submit-btn {
+            background: #ffb347;
+            color: #1e293b;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+        
+        .submit-btn:hover {
+            background: #ffa01e;
+            transform: translateY(-2px);
+        }
+        
+        /* Футер */
+        .footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #ffb347;
+            text-decoration: none;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-form {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ШАПКА С РАССВЕТОМ -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>РЕМОНТ КВАРТИР <span>— ВАШ МАСТЕР</span></h1>
+            <p>Иркутск и область. Честные цены по прайсу, реальные фото, гарантия. Рассчитайте стоимость за 2 минуты.</p>
+            <a href="#price" class="cta-button">👉 СМОТРЕТЬ ЦЕНЫ</a>
+        </div>
+    </section>
+    
+    <!-- НАВИГАЦИЯ -->
+    <div class="nav-bar">
+        <div class="nav-container">
+            <div class="logo">ВАШ МАСТЕР <small>Иркутск</small></div>
+            <div class="nav-links">
+                <a href="#price">Цены</a>
+                <a href="#gallery">Фото работ</a>
+                <a href="#advantages">Почему мы</a>
+                <a href="#contact">Контакты</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- ПРЕЙСКУРАНТ ЦЕН (РЕАЛЬНЫЙ ПРАЙС 2026) [citation:4] -->
+        <section id="price">
+            <h2 class="section-title">💰 ПРАЙС-ЛИСТ НА 2026 ГОД (Иркутск)</h2>
+            <p style="margin-bottom: 30px;">Цены указаны за работу. Материалы не входят в стоимость.</p>
+            
+            <div class="price-grid">
+                <!-- Карточка 1: Стены/Потолок -->
+                <div class="price-card" style="border-left-color: #3498db;">
+                    <h3>🧱 СТЕНЫ И ПОТОЛОК</h3>
+                    <ul class="price-list">
+                        <li><span>Выравнивание стен (штукатурка)</span> <span class="price">от 650 ₽/м²</span></li>
+                        <li><span>Шпаклевка стен под покраску</span> <span class="price">от 380 ₽/м²</span></li>
+                        <li><span>Поклейка обоев (простое)</span> <span class="price">500 ₽/м²</span></li>
+                        <li><span>Поклейка обоев (флизелин/винил)</span> <span class="price">600 ₽/м²</span></li>
+                        <li><span>Покраска стен (1 слой)</span> <span class="price">200 ₽/м²</span></li>
+                        <li><span>Установка ПВХ панелей</span> <span class="price">550 ₽/м²</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Карточка 2: Полы -->
+                <div class="price-card" style="border-left-color: #2ecc71;">
+                    <h3>🪵 ПОЛЫ</h3>
+                    <ul class="price-list">
+                        <li><span>Стяжка пола (до 5 см)</span> <span class="price">650 ₽/м²</span></li>
+                        <li><span>Укладка ламината</span> <span class="price">450 ₽/м²</span></li>
+                        <li><span>Укладка паркетной доски</span> <span class="price">600 ₽/м²</span></li>
+                        <li><span>Укладка керамогранита/плитки</span> <span class="price">1300 ₽/м²</span></li>
+                        <li><span>Настил линолеума</span> <span class="price">300 ₽/м²</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Карточка 3: Двери [citation:4] -->
+                <div class="price-card" style="border-left-color: #e67e22;">
+                    <h3>🚪 ДВЕРИ И АРКИ</h3>
+                    <ul class="price-list">
+                        <li><span>Установка распашной двери (готовый проем)</span> <span class="price">2500–3000 ₽</span></li>
+                        <li><span>Установка скрытой двери</span> <span class="price">3500–4000 ₽</span></li>
+                        <li><span>Установка двери-купе</span> <span class="price">2000–2500 ₽</span></li>
+                        <li><span>Установка арочной двери</span> <span class="price">3500–4500 ₽</span></li>
+                        <li><span>Монтаж наличников</span> <span class="price">250 ₽/сторона</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Карточка 4: Сантехника/Электрика -->
+                <div class="price-card" style="border-left-color: #9b59b6;">
+                    <h3>⚡️ САНТЕХНИКА / ЭЛЕКТРИКА</h3>
+                    <ul class="price-list">
+                        <li><span>Установка унитаза</span> <span class="price">2000 ₽</span></li>
+                        <li><span>Установка раковины</span> <span class="price">1800 ₽</span></li>
+                        <li><span>Установка смесителя</span> <span class="price">900 ₽</span></li>
+                        <li><span>Точка электрики (штроба/провод)</span> <span class="price">550 ₽</span></li>
+                        <li><span>Установка розетки/выключателя</span> <span class="price">300 ₽</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="note">* Цены носят справочный характер. Точная стоимость зависит от объема работ и состояния поверхностей. Выезд мастера на замер — бесплатно.</p>
+        </section>
+        
+        <!-- ГАЛЕРЕЯ РАБОТ (ФОТО ПОТОМ ЗАКИНЕШЬ) -->
+        <section id="gallery">
+            <h2 class="section-title">📸 РЕАЛЬНЫЕ ФОТО РАБОТ</h2>
+            
+            <div class="gallery-grid">
+                <!-- Заглушка 1 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">🏠</div>
+                    <div class="gallery-caption">
+                        <p><strong>Кухня 12 м²</strong></p>
+                        <p>Капитальный ремонт</p>
+                        <p class="price-tag">≈ 145 000 ₽</p>
+                    </div>
+                </div>
+                <!-- Заглушка 2 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">🛁</div>
+                    <div class="gallery-caption">
+                        <p><strong>Ванная 5 м²</strong></p>
+                        <p>Плитка, сантехника</p>
+                        <p class="price-tag">≈ 98 000 ₽</p>
+                    </div>
+                </div>
+                <!-- Заглушка 3 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">🛏️</div>
+                    <div class="gallery-caption">
+                        <p><strong>Спальня 18 м²</strong></p>
+                        <p>Косметический ремонт</p>
+                        <p class="price-tag">≈ 85 000 ₽</p>
+                    </div>
+                </div>
+                <!-- Заглушка 4 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">🚪</div>
+                    <div class="gallery-caption">
+                        <p><strong>Прихожая</strong></p>
+                        <p>Установка дверей</p>
+                        <p class="price-tag">≈ 25 000 ₽</p>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">Фото будут загружены позже — текущие заглушки</p>
+        </section>
+        
+        <!-- ПРЕИМУЩЕСТВА -->
+        <section id="advantages">
+            <h2 class="section-title">🔥 ПОЧЕМУ НАМ ДОВЕРЯЮТ</h2>
+            <div class="advantages">
+                <div class="advantage-item">
+                    <div class="advantage-icon">⚡</div>
+                    <h3>Честные цены</h3>
+                    <p>Прайс открыт — никаких скрытых платежей</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">📏</div>
+                    <h3>Бесплатный замер</h3>
+                    <p>Выезжаем по Иркутску и области</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🛡️</div>
+                    <h3>Гарантия 3 года</h3>
+                    <p>На все виды работ</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">📋</div>
+                    <h3>Смета в день заявки</h3>
+                    <p>Точный расчет за 2 часа</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
+        <section id="contact" class="contact-form">
+            <h2 style="color: white; margin-bottom: 30px;">📞 ОСТАВЬТЕ ЗАЯВКУ</h2>
+            <div class="form-grid">
+                <div>
+                    <p style="margin-bottom: 20px;">Приедем, посчитаем, посоветуем. Абсолютно бесплатно.</p>
+                    <p style="font-size: 1.2rem;">📱 +7 (952) 523-33-27</p>
+                    <p>✉️ мастер.ирк@yandex.ru</p>
+                    <p>📍 Иркутск, ул. Советская, 58</p>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label>Ваше имя</label>
+                        <input type="text" class="form-control" placeholder="Виталий">
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" class="form-control" placeholder="+7 952 123-45-67">
+                    </div>
+                    <div class="form-group">
+                        <label>Тип ремонта</label>
+                        <select class="form-control">
+                            <option>Косметический</option>
+                            <option>Капитальный</option>
+                            <option>Евроремонт</option>
+                        </select>
+                    </div>
+                    <button class="submit-btn">👉 Отправить заявку</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <p>© 2026 ВАШ МАСТЕР — ремонт квартир в Иркутске</p>
+        <p>Все цены актуальны на 2026 год [ссылка: des-room.ru]</p>
+        <p>Работаем по договору, с гарантией. ИП Петров А.В.</p>
+    </footer>
+</body>
+</html>
